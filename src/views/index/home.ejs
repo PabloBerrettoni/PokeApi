@@ -31,7 +31,21 @@
             <% }) %>
         </div>
 
+        <% if (offset > 0) { %>
+            <% let newOffsetNext = parseInt(offset) + 10 %>
+            <% let newOffsetPrev = parseInt(offset) - 10 %>
+            <div class="prevNext"><a href="/<%-newOffsetPrev%>">Previous</a></div>
+            <div class="prevNext"><a href="/<%-newOffsetNext%>">Next</a></div>
+        <% } else { %>
+            <% let newOffsetNext = parseInt(offset) + 10 %>
+            <div class="prevNext"><a href="/<%-newOffsetNext%>">Next</a></div>
+        <% } %>
+
     </main>
+
+    <footer>
+        <p>Pablo Berrettoni ©</p>
+    </footer>
 
 </body>
 </html>

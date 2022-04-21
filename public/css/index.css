@@ -35,13 +35,13 @@ header p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
     text-align: center;
-    height: 100vh;
+    height: 100%;
     width: 90vw;
-    text-transform:capitalize;
-    margin-top: 5%;
+    text-transform: capitalize;
+    justify-content: center;
+    margin: 5% auto 0%;
 }
 .IndividualPokeCard {
     display: flex;
@@ -59,4 +59,23 @@ header p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.prevNext {
+    text-align: center;
+    margin-bottom: 2%;
+}
+.prevNext p {
+    color: #303841;
+}
+
+/* Footer */
+
+footer {
+    height: 100px;
+    background-color: #303841;
+    text-align: center;
+}
+footer p {
+    color: #DFDFDE;
 }
