@@ -8,23 +8,30 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
-    <h1 class="separator">Lista de pokemons:</h1>
 
-    <div class="pokeCards">
-        <% processedPokemons.forEach(pokemon => { %>
-            <div class="IndividualPokeCard">
-                <h2><%-pokemon.name%></h2>
-                <img src="<%-pokemon.sprite%>" alt="Image of a Pokemon" class="spriteFrontDefault">
-                <div class="pokeTypes">
-                    <h4 class="pokeType"><%-pokemon.type1%></h4>
-                    <% if (pokemon.type2 != undefined) { %>
-                        <h4 class="pokeType"><%-pokemon.type2%></h4>
-                    <% } %>
+    <header>
+        <p>PokeApi</p>
+        <p>Search</p>
+    </header>
+    
+    <main>
+
+        <div class="pokeCards">
+            <% processedPokemons.forEach(pokemon => { %>
+                <div class="IndividualPokeCard">
+                    <h2><%-pokemon.name%></h2>
+                    <img src="<%-pokemon.sprite%>" alt="Image of a Pokemon" class="spriteFrontDefault">
+                    <div class="pokeTypes">
+                        <h4 class="pokeType"><%-pokemon.type1%></h4>
+                        <% if (pokemon.type2 != undefined) { %>
+                            <h4 class="pokeType"><%-pokemon.type2%></h4>
+                        <% } %>
+                    </div>
                 </div>
-            </div>
-        <% }) %>
-    </div>
+            <% }) %>
+        </div>
+
+    </main>
 
 </body>
 </html>

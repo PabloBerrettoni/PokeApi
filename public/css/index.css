@@ -7,13 +7,29 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: sandybrown;
+    background-image: url('../img/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-
-.separator {    
-    margin: 5% 0 0 5%;
+/* Header */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #303841;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
 }
+header p {
+    margin: 0 5% 0 5%;
+    padding: 1%;
+    color: #F7F5F2;
+}
+
+/* Main */
 
 .pokeCards {
     display: flex;
@@ -22,16 +38,18 @@ body{
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    height: 25vh;
+    height: 100vh;
     width: 90vw;
+    text-transform:capitalize;
+    margin-top: 5%;
 }
 .IndividualPokeCard {
     display: flex;
     flex-direction: column;
-    margin: 5%;
-    background-color: cornflowerblue;
+    margin: 2% 5% 5% 2%;
+    background-color: #DFDFDE;
     border-radius: 5%;
-    width: 15%;
+    min-width: 15%;
 }
 .spriteFrontDefault img{
     width: 25px;
