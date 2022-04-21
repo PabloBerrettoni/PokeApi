@@ -1,3 +1,44 @@
+* {
+    font-weight: 100;
+}
 body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     background-color: sandybrown;
+}
+
+
+.separator {    
+    margin: 5% 0 0 5%;
+}
+
+.pokeCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    height: 25vh;
+    width: 90vw;
+}
+.IndividualPokeCard {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    background-color: cornflowerblue;
+    border-radius: 5%;
+    width: 15%;
+}
+.spriteFrontDefault img{
+    width: 25px;
+}
+
+.pokeTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
