@@ -14,6 +14,10 @@
     <% processedPokemons.forEach(pokemon => { %>
         <h1><%-pokemon.name%></h1>
         <img src="<%-pokemon.sprite%>" alt="" srcset="">
+        <h4><%-pokemon.type1%></h4>
+        <% if (pokemon.type2 != undefined) { %>
+            <h4><%-pokemon.type2%></h4>
+        <% } %>
     <% }) %>
 
 </body>

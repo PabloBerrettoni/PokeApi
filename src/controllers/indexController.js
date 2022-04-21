@@ -10,11 +10,14 @@ module.exports = {
             let pokemonData = await axios.get(pokemon.url);
             let pkm = {
                 name: pokemon.name,
-                sprite: pokemonData.data.sprites.front_default
+                sprite: pokemonData.data.sprites.front_default,
+                type1: pokemonData.data.types[0].type.name,
+                type2: pokemonData.data.types[1] ? pokemonData.data.types[1].type.name : undefined
             }
             processedPokemons.push(pkm);
         }
-        console.log(processedPokemons);
+
+        console.log(processedPokemons)
 
         return res.render('index/home', {processedPokemons});
 
