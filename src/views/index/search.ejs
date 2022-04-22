@@ -9,6 +9,8 @@
 </head>
 <body>
     
+    <%- include('../partials/headerPartial') %>
+
     <% if (pkm != undefined ) { %>
         <div class="IndividualPokeCard">
             <h2><%-pkm.name%></h2>
@@ -21,8 +23,10 @@
             </div>
         </div>
     <% } else { %>
-        <h1>No se encontraron pokemons</h1>
+        <h1>No se encontraron pokemons con ese nombre</h1>
     <% } %>
 
+    <%- include('../partials/footerPartial') %>
+    
 </body>
 </html>

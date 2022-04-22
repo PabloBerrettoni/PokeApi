@@ -1,1 +1,79 @@
 @import url('./background.css');
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #303841;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+}
+header a,
+form {
+    margin: 0 5% 0 5%;
+    padding: 1%;
+    color: #F7F5F2;    
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+header i {
+    margin: 0 5%;
+}
+
+.searchInput {
+    display: flex;
+    flex-direction: row;
+}
+
+.ispan { 
+    float: right;
+        margin-right: 6px;
+        margin-top: -20px;
+        position: relative;
+        z-index: 2;
+        color: red;
+}
+
+/* Main */
+.pokeCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    height: 100%;
+    width: 90vw;
+    text-transform: capitalize;
+    justify-content: center;
+    margin: 5% auto 0%;
+}
+.IndividualPokeCard {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 5% 5% 2%;
+    background-color: #DFDFDE;
+    border-radius: 5%;
+    min-width: 15%;
+}
+.spriteFrontDefault img{
+    width: 25px;
+}
+
+.pokeTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Footer */
+footer {
+    height: 100px;
+    background-color: #303841;
+    text-align: center;
+}
+footer p {
+    color: #DFDFDE;
+}

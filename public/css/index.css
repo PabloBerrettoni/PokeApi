@@ -95,7 +95,7 @@ footer p {
 }
 
 /* Media Querys */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
     header {
         height: 5%;
         align-items: center;
@@ -104,14 +104,20 @@ footer p {
         margin-top: 15%;
     }
     .IndividualPokeCard { 
-        min-width: 60%;
+        min-width: 40%;
         height: 40%;
     }
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (min-width: 480px) {
     .IndividualPokeCard { 
-        min-width: 30%;
+        min-width: 25%;
         height: 40%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .IndividualPokeCard{
+        min-width: 15%;
     }
 }
