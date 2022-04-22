@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeSearch</title>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    
+    <% if (pkm != undefined ) { %>
+        <div class="IndividualPokeCard">
+            <h2><%-pkm.name%></h2>
+            <img src="<%-pkm.sprite%>" alt="Image of a Pokemon" class="spriteFrontDefault">
+            <div class="pokeTypes">
+                <h4 class="pokeType"><%-pkm.type1%></h4>
+                <% if (pkm.type2 != undefined) { %>
+                    <h4 class="pokeType"><%-pkm.type2%></h4>
+                <% } %>
+            </div>
+        </div>
+    <% } else { %>
+        <h1>No se encontraron pokemons</h1>
+    <% } %>
+
+</body>
+</html>

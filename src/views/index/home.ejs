@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/f0097a676d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <header>
-        <p>PokeApi</p>
-        <p>Search</p>
+        <a href="/"><i class="fa-solid fa-house"></i>PokeApi</a>
+        <form action="/search/:search">
+            <div class="searchInput">
+                <input type="text" name="search" id="search" placeholder="Search">
+                <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+            </div>
+        </form>
     </header>
     
     <main>
@@ -31,15 +37,17 @@
             <% }) %>
         </div>
 
-        <% if (offset > 0) { %>
-            <% let newOffsetNext = parseInt(offset) + 10 %>
-            <% let newOffsetPrev = parseInt(offset) - 10 %>
-            <div class="prevNext"><a href="/<%-newOffsetPrev%>">Previous</a></div>
-            <div class="prevNext"><a href="/<%-newOffsetNext%>">Next</a></div>
-        <% } else { %>
-            <% let newOffsetNext = parseInt(offset) + 10 %>
-            <div class="prevNext"><a href="/<%-newOffsetNext%>">Next</a></div>
-        <% } %>
+        <div class="prevNextContainer">
+            <% if (offset > 0) { %>
+                <% let newOffsetNext = parseInt(offset) + 10 %>
+                <% let newOffsetPrev = parseInt(offset) - 10 %>
+                <div class="prevNext"><a href="/<%-newOffsetPrev%>"><i class="fa-solid fa-arrow-left"></i>Previous</a></div>
+                <div class="prevNext"><a href="/<%-newOffsetNext%>">Next<i class="fa-solid fa-arrow-right"></i></a></div>
+            <% } else { %>
+                <% let newOffsetNext = parseInt(offset) + 10 %>
+                <div class="prevNext"><a href="/<%-newOffsetNext%>">Next<i class="fa-solid fa-arrow-right"></i></a></div>
+            <% } %>
+        </div>
 
     </main>
 

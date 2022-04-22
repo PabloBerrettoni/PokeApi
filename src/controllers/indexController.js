@@ -17,8 +17,6 @@ module.exports = {
             processedPokemons.push(pkm);
         }
 
-        /* console.log(processedPokemons) */
-
         let offset = 0;
         return res.render('index/home', {processedPokemons, offset});
 
@@ -50,6 +48,22 @@ module.exports = {
 
         /* console.log(processedPokemons) */
         return res.render('index/home', {processedPokemons, offset: req.params.offsetValue});
+
+    },
+
+    searchController: async (req, res) => {
+
+        let pokeSearch = req.query.search;
+
+        let pokemonFound = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeSearch}`);
+        let pkm = {
+            name: pokemonFound.data.name,
+            sprite: pokemonFound.data.sprites.front_default,
+            type1: pokemonFound.data.types[0].type.name,
+            type2: pokemonFound.data.types[1] ? pokemonFound.data.types[1].type.name : undefined
+        }
+        
+        return res.render('index/search', {pkm});
 
     }
 }
