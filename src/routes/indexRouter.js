@@ -4,6 +4,6 @@ const controller = require('../controllers/indexController');
 
 router.get('/', controller.homeView);
 router.get('/:offsetValue', controller.homeViewOffset);
-router.get('/search/:searchParams', controller.searchController)
+router.post('/search', controller.searchController);
 
 module.exports = router;

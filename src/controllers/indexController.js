@@ -1,30 +1,15 @@
 const axios = require('axios');
+const { query } = require('express');
 
 module.exports = {
     homeView: async (req, res) => {
 
-        const allPokemons = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=0`);
-
-        let processedPokemons = [];
-        for (const pokemon of allPokemons.data.results) {
-            let pokemonData = await axios.get(pokemon.url);
-            let pkm = {
-                name: pokemon.name,
-                sprite: pokemonData.data.sprites.front_default,
-                type1: pokemonData.data.types[0].type.name,
-                type2: pokemonData.data.types[1] ? pokemonData.data.types[1].type.name : undefined
-            }
-            processedPokemons.push(pkm);
-        }
-
-        let offset = 0;
-        return res.render('index/home', {processedPokemons, offset});
+        return res.redirect('/0');
 
     },
 
     homeViewOffset: async (req, res) => {
 
-        console.log(req.params)
         let offsetValue;
         if (req.params != null || req.params != undefined) {
             offsetValue = req.params.offsetValue;
@@ -52,23 +37,22 @@ module.exports = {
 
     searchController: async (req, res) => {
 
-        let pokeSearch = req.query.search;
-
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeSearch}`)
-        .then(pokemonFound => {
+        try{
+            let pokeSearch = req.body.search;
+            let pokemonFound = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeSearch}`)
+            
             let pkm = {
                 name: pokemonFound.data.name,
                 sprite: pokemonFound.data.sprites.front_default,
                 type1: pokemonFound.data.types[0].type.name,
                 type2: pokemonFound.data.types[1] ? pokemonFound.data.types[1].type.name : undefined
             }
-            
             return res.render('index/search', {pkm});
-        })
-        .catch(error => {
+        } 
+        catch(error) {
             console.log(error);
             return res.render('index/search', {pkm: undefined});
-        })
+        }
 
     }
 }

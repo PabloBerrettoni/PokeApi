@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeSearch</title>
     <link rel="stylesheet" href="css/search.css">
+    <script src="https://kit.fontawesome.com/f0097a676d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
     <%- include('../partials/headerPartial') %>
 
     <% if (pkm != undefined ) { %>
-        <div class="IndividualPokeCard">
-            <h2><%-pkm.name%></h2>
-            <img src="<%-pkm.sprite%>" alt="Image of a Pokemon" class="spriteFrontDefault">
-            <div class="pokeTypes">
-                <h4 class="pokeType"><%-pkm.type1%></h4>
-                <% if (pkm.type2 != undefined) { %>
-                    <h4 class="pokeType"><%-pkm.type2%></h4>
-                <% } %>
+        <main>
+            <div class="pokeImage">
+                <img src="<%-pkm.sprite%>" alt="Image of a Pokemon" class="spriteFrontDefault">
             </div>
-        </div>
+            <div class="pokeInfo">
+                <h2><%-pkm.name%></h2>
+                <div class="pokeTypes">
+                    <h4 class="pokeType"><%-pkm.type1%></h4>
+                    <% if (pkm.type2 != undefined) { %>
+                        <h4 class="pokeType"><%-pkm.type2%></h4>
+                    <% } %>
+                </div>
+            </div>
+        </main>
     <% } else { %>
         <h1>No se encontraron pokemons con ese nombre</h1>
     <% } %>
